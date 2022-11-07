@@ -1,5 +1,19 @@
+<?php
+
+session_start();
+if (isset($_SESSION['alert_msg'])){
+        echo 
+        '<div class="alert alert-'.$_SESSION['alert_type'].'" role="alert">'.$_SESSION['alert_msg'].'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +22,9 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
 </head>
+
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php require 'navbar.php'; ?>
 
     <header class="bg-primary-gradient">
         <div class="container pt-4 pt-xl-5">
@@ -73,4 +88,5 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
 </body>
+
 </html>
