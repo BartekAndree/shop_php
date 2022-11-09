@@ -30,27 +30,40 @@
                 </div>
 
                 <div class="row row-cols-2 row-cols-md-3 mx-auto" style="max-width: 900px;">
-                    <div class="col mb-4">
-                        <div class="text-center"><img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/1.jpg">
-                            <h5 class="fw-bold mb-0"><strong>Ananas</strong></h5>
-                            <p class="text-muted mb-2">Erat netus</p>
-                            <a class="btn btn-primary shadow" role="button" href="">ZAMÓW</a>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="text-center"><img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/2.jpg">
-                            <h5 class="fw-bold mb-0"><strong>Wiśnia</strong></h5>
-                            <p class="text-muted mb-2">Erat netus</p>
-                            <a class="btn btn-primary shadow" role="button" href="">ZAMÓW</a>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="text-center"><img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/3.jpg">
-                            <h5 class="fw-bold mb-0"><strong>Kaktus</strong></h5>
-                            <p class="text-muted mb-2">Erat netus</p>
-                            <a class="btn btn-primary shadow" role="button" href="">ZAMÓW</a>
-                        </div>
-                    </div>
+
+                    <?php
+                        require_once "database_connect.php";
+                        $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+                        
+                        function getProducts($connection)
+                        {
+                            $products = array();
+                            $sql = "SELECT * FROM products";
+                            $result = $connection->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $products[] = $row;
+                                }
+                            }
+                            return $products;
+                        }
+
+                        
+                        foreach (getProducts($connection) as $product) {
+                            echo 
+                            '<div class="col mb-4">
+                                <div class="text-center">
+                                    <img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/'.$product['img'].'">
+                                    <h5 class="fw-bold mb-0"><strong>'.$product['name'].'</strong></h5>
+                                    <p class="text-muted mb-3">'.$product['description'].'</p>
+                                    <a class="btn btn-primary shadow" role="button" href="">'.$product['price'].' $</a>
+                                </div>
+                            </div>';
+                        }
+                    
+
+                    ?>
+
                 </div>
 
             </div>

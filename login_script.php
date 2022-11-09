@@ -4,11 +4,12 @@
 	
 	if ((!isset($_POST['email'])) || (!isset($_POST['password'])))
 	{
-		header('Location: chuj.php');
+		header('Location: login_page.php');
 		exit();
 	}
 
 	require_once "database_connect.php";
+
 
 	$connection = @new mysqli($host, $db_user, $db_password, $db_name);
 	
@@ -42,20 +43,20 @@
 					
 					unset($_SESSION['alert_msg']);
 					$results->free_result();
-					header('Location: index.php');
+					header('Location: login_page.php');
 				}
 				else 
 				{
 					$_SESSION['alert_msg'] = 'Nieprawidłowy email lub hasło!';
 					$_SESSION['alert_type'] = 'danger';
-					header('Location: index.php');
+					header('Location: login_page.php');
 				}
 				
 			} else {
 				
 				$_SESSION['alert_msg'] = 'Nieprawidłowy email lub hasło!';
 				$_SESSION['alert_type'] = 'danger';
-				header('Location: index.php');
+				header('Location: login_page.php');
 				
 			}
 			
