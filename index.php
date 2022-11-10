@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-
+if (isset($_SESSION['alert_msg'])) {
+    unset($_SESSION['alert_msg']);
+}
 ?>
 
 

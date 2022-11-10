@@ -14,6 +14,10 @@
             </ul>
 
             <?php
+
+                if ($_SESSION['isadmin'] == 1) {
+                    echo '<a class="btn btn-outline-warning shadow me-2 btn-sm" role="button" href="admin_page.php">Admin 🦸‍♂️</a>';
+                }
             
                 if (isset($_SESSION['logged_flag']) && $_SESSION['logged_flag'] == true) {
                     echo '<a class="btn btn-danger shadow" role="button" href="logout_script.php">Logout 🚩</a>';
