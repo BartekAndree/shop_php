@@ -18,7 +18,7 @@
 <body>
     <?php include 'navbar.php'; ?>
 
-    <body>
+
 
         <section class="py-5">
             <div class="container py-5">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-2 row-cols-md-3 mx-auto" style="max-width: 900px;">
+                <div class="row row-cols-1 row-cols-md-3 mx-auto" style="max-width: 900px;">
 
                     <?php
                         require_once "database_connect.php";
@@ -56,7 +56,10 @@
                                     <img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/'.$product['img'].'">
                                     <h5 class="fw-bold mb-0"><strong>'.$product['name'].'</strong></h5>
                                     <p class="text-muted mb-3">'.$product['description'].'</p>
-                                    <a class="btn btn-primary shadow" role="button" href="">'.$product['price'].' $</a>
+                                    <a class="btn btn-primary shadow" role="button" 
+                                        href="product_page.php?id='.$product['id'].'">
+                                        '.$product['price'].' $ 
+                                    </a>
                                 </div>
                             </div>';
                         }
@@ -69,7 +72,6 @@
             </div>
         </section>
 
-    </body>
 
 
     <?php include 'footer.php'; ?>

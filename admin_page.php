@@ -21,7 +21,7 @@
 
     <div class="container text-center">
         <div class="row">
-            <div class="col">
+            <div class="col col-md-8">
                 <h2>Products</h2>
                 <table class="table table-striped table-hover">
                     <thead>
@@ -31,42 +31,44 @@
                             <th scope="col">Description</th>
                             <th scope="col">Img</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Edit</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                        require_once "database_connect.php";
-                        $connection = @new mysqli($host, $db_user, $db_password, $db_name);
-                        
-                        function getProducts($connection)
-                        {
-                            $products = array();
-                            $sql = "SELECT * FROM products";
-                            $result = $connection->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $products[] = $row;
+                        <?php
+                            require_once "database_connect.php";
+                            $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+                            
+                            function getProducts($connection)
+                            {
+                                $products = array();
+                                $sql = "SELECT * FROM products";
+                                $result = $connection->query($sql);
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $products[] = $row;
+                                    }
                                 }
+                                return $products;
                             }
-                            return $products;
-                        }
 
-                        
-                        foreach (getProducts($connection) as $product) {
-                            echo 
-                            '<tr>
-                            <th scope="row">'.$product['id'].'</th>
-                            <td>'.$product['name'].'</td>
-                            <td>'.$product['description'].'</td>
-                            <td>'.$product['img'].'</td>
-                            <td>'.$product['price'].'</td>
-                            </tr>';
-                        }
-                    ?>
+                            
+                            foreach (getProducts($connection) as $product) {
+                                echo 
+                                '<tr>
+                                <th scope="row">'.$product['id'].'</th>
+                                    <td>'.$product['name'].'</td>
+                                    <td>'.$product['description'].'</td>
+                                    <td>'.$product['img'].'</td>
+                                    <td>'.$product['price'].'</td>
+                                    <td><a class="btn btn-outline-danger shadow btn-sm" role="button" href="product_page/'.$product['id'].'.php">Edit</a>
+                                </tr>';
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
-            <div class="col">
+            <div class="col col-md-4">
             <h2>Users</h2>
                 <table class="table table-striped table-hover table-sm">
                     <thead>
@@ -77,33 +79,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                        require_once "database_connect.php";
-                        $connection = @new mysqli($host, $db_user, $db_password, $db_name);
-                        
-                        function getUsers($connection)
-                        {
-                            $products = array();
-                            $sql = "SELECT * FROM users";
-                            $result = $connection->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $products[] = $row;
+                        <?php
+                            require_once "database_connect.php";
+                            $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+                            
+                            function getUsers($connection)
+                            {
+                                $products = array();
+                                $sql = "SELECT * FROM users";
+                                $result = $connection->query($sql);
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $products[] = $row;
+                                    }
                                 }
+                                return $products;
                             }
-                            return $products;
-                        }
 
-                        
-                        foreach (getUsers($connection) as $user) {
-                            echo 
-                            '<tr>
-                            <th scope="row">'.$user['id'].'</th>
-                            <td>'.$user['email'].'</td>
-                            <td>'.$user['isadmin'].'</td>
-                            </tr>';
-                        }
-                    ?>
+                            
+                            foreach (getUsers($connection) as $user) {
+                                echo 
+                                '<tr>
+                                    <th scope="row">'.$user['id'].'</th>
+                                    <td>'.$user['email'].'</td>
+                                    <td>'.$user['isadmin'].'</td>
+                                </tr>';
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
