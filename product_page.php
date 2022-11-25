@@ -19,45 +19,45 @@
 <body>
     <?php include 'navbar.php'; ?>
 
-
-
-        <section class="py-5">
-            <div class="container py-5">
-                <div class="row row-cols-2 row-cols-md-3 mx-auto" style="max-width: 900px;">
-
-                    <?php
-                            require_once "database_connect.php";
-                            $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+    <?php
+        require_once "database_connect.php";
+        $connection = @new mysqli($host, $db_user, $db_password, $db_name);
                             
-                            function getProduct($connection)
-                            {
-                                $product_id = $_GET['id'];
-                                $sql = "SELECT * FROM products WHERE id='$product_id'";
-                                $result = $connection->query($sql);
-                                if ($result->num_rows > 0 && $result->num_rows < 2) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        $products[] = $row;
-                                    }
-                                }
-                                return $products;
-                            }
-                            
-                            echo
-                            '<div class="col mb-4">
-                                <div class="text-center">
-                                    <img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/'.$product['img'].'">
-                                    <h5 class="fw-bold mb-0"><strong>'.$product['name'].'</strong></h5>
-                                    <p class="text-muted mb-3">'.$product['description'].'</p>
-                                    <a class="btn btn-primary shadow" role="button" href="">'.$product['price'].' $</a>
-                                </div>
-                            </div>';
-                            
-                        ?>
-
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM products WHERE id = $id";
+        $result = $connection->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $product[] = $row;
+            }
+            echo <<< EOT
+            <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="assets/img/products/{$product[0]['img']}" alt="{$product[0]['name']}" /></div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">ID: {$product[0]['id']}</div>
+                        <h1 class="display-5 fw-bolder">{$product[0]['name']}</h1>
+                        <div class="fs-5 mb-5">
+                            <span>$ {$product[0]['price']}</span>
+                        </div>
+                        <p class="lead">{$product[0]['description']}</p>
+                        <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
+        EOT;
+        }
+                            
+    ?>
+                    
 
 
     <?php include 'footer.php'; ?>
