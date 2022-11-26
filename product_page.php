@@ -21,7 +21,6 @@
 
     <?php
         require_once "database_connect.php";
-        $connection = @new mysqli($host, $db_user, $db_password, $db_name);
                             
         $id = $_GET['id'];
         $sql = "SELECT * FROM products WHERE id = $id";

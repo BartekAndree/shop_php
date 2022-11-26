@@ -9,9 +9,6 @@
 	}
 
 	require_once "database_connect.php";
-
-
-	$connection = @new mysqli($host, $db_user, $db_password, $db_name);
 	
 	if ($connection->connect_errno!=0)
 	{
