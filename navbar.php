@@ -15,7 +15,7 @@
 
             <?php
 
-                if ($_SESSION['isadmin'] == 1) {
+                if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] == 1) {
                     echo '<a class="btn btn-outline-warning shadow me-2 btn-sm" role="button" href="admin_page.php">Admin 🦸‍♂️</a>';
                 }
             

@@ -68,7 +68,7 @@
 				
 				if ($succes_flag==true)
 				{
-					//dodajemy gracza do bazy
+					//dodajemy użytkownika do bazy
 					
 					if ($connection->query("INSERT INTO users VALUES (NULL, '$email', '$password_hash', '0')"))
 					{

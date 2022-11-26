@@ -64,7 +64,7 @@
                             </div>';
                         }
                     
-
+                        $connection->close();
                     ?>
 
                 </div>
