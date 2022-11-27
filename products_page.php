@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestToysEver</title>
+    <title>Najlepszy sklep</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.reflowhq.com/v2/toolkit.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
@@ -24,8 +24,7 @@
             <div class="container py-5">
                 <div class="row mb-4 mb-lg-5">
                     <div class="col-md-8 col-xl-6 text-center mx-auto">
-                        <h2 class="fw-bold">Products</h2>
-                        <p class="text-muted w-lg-50">No matter the project, our team can handle it.</p>
+                        <h2 class="fw-bold">Produkty</h2>
                     </div>
                 </div>
 
@@ -57,7 +56,7 @@
                                     <p class="text-muted mb-3">'.$product['description'].'</p>
                                     <a class="btn btn-primary shadow" role="button" 
                                         href="product_page.php?id='.$product['id'].'">
-                                        '.$product['price'].' $ 
+                                        '.$product['price'].' zł 
                                     </a>
                                 </div>
                             </div>';

@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestToysEver</title>
+    <title>Najlepszy sklep</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
 </head>
@@ -31,8 +31,8 @@
         <div class="container py-5">
             <div class="row mb-4 mb-lg-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <p class="fw-bold text-success mb-2">Sign up</p>
-                    <h2 class="fw-bold">Welcome</h2>
+                    <p class="fw-bold text-success mb-2">Zarejstruj się</p>
+                    <h2 class="fw-bold">Witamy</h2>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -44,10 +44,10 @@
                                 </svg></div>
                             <form method="post" action="registration_script.php">
                                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-                                <div class="mb-3"><input class="form-control" type="password" name="password1" placeholder="Password"></div>
-                                <div class="mb-3"><input class="form-control" type="password" name="password2" placeholder="Password"></div>
-                                <div class="mb-3"><button class="btn btn-primary shadow d-block w-100" type="submit">Sign up</button></div>
-                                <p class="text-muted">Already have an account?&nbsp;<a href="login_page.php">Log in</a></p>
+                                <div class="mb-3"><input class="form-control" type="password" name="password1" placeholder="Hasło"></div>
+                                <div class="mb-3"><input class="form-control" type="password" name="password2" placeholder="Hasło"></div>
+                                <div class="mb-3"><button class="btn btn-primary shadow d-block w-100" type="submit">Zarejestruj się </button></div>
+                                <p class="text-muted">Masz już konto?&nbsp;<a href="login_page.php">Zaloguj się</a></p>
                             </form>
                         </div>
                     </div>

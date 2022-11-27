@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestToysEver</title>
+    <title>Najlepszy sklep</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.reflowhq.com/v2/toolkit.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
@@ -38,14 +38,14 @@
                         <div class="small mb-1">ID: {$product[0]['id']}</div>
                         <h1 class="display-5 fw-bolder">{$product[0]['name']}</h1>
                         <div class="fs-5 mb-5">
-                            <span>$ {$product[0]['price']}</span>
+                            <span> {$product[0]['price']} zł</span>
                         </div>
                         <p class="lead">{$product[0]['description']}</p>
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" max="10" min="1" style="max-width: 5rem" />
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-cart-fill me-1"></i>
-                                Add to cart
+                                Dodaj do koszyka
                             </button>
                         </div>
                     </div>
