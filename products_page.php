@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -20,55 +20,55 @@
 
 
 
-        <section class="py-5">
-            <div class="container py-5">
-                <div class="row mb-4 mb-lg-5">
-                    <div class="col-md-8 col-xl-6 text-center mx-auto">
-                        <h2 class="fw-bold">Produkty</h2>
-                    </div>
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row mb-4 mb-lg-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">Produkty</h2>
                 </div>
+            </div>
 
-                <div class="row row-cols-1 row-cols-md-3 mx-auto" style="max-width: 900px;">
+            <div class="row row-cols-1 row-cols-md-3 mx-auto" style="max-width: 900px;">
 
-                    <?php
-                        require_once "database_connect.php";
-                        
-                        function getProducts($connection)
-                        {
-                            $products = array();
-                            $sql = "SELECT * FROM products";
-                            $result = $connection->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $products[] = $row;
-                                }
-                            }
-                            return $products;
+                <?php
+                require_once "database_connect.php";
+
+                function getProducts($connection)
+                {
+                    $products = array();
+                    $sql = "SELECT * FROM products";
+                    $result = $connection->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $products[] = $row;
                         }
+                    }
+                    return $products;
+                }
 
-                        
-                        foreach (getProducts($connection) as $product) {
-                            echo 
-                            '<div class="col mb-4">
+
+                foreach (getProducts($connection) as $product) {
+                    echo
+                    '<div class="col mb-4">
                                 <div class="text-center">
-                                    <img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/'.$product['img'].'">
-                                    <h5 class="fw-bold mb-0"><strong>'.$product['name'].'</strong></h5>
-                                    <p class="text-muted mb-3">'.$product['description'].'</p>
+                                    <img class="rounded mb-3 fit-cover" width="200" height="200" src="assets/img/products/' . $product['img'] . '">
+                                    <h5 class="fw-bold mb-0"><strong>' . $product['name'] . '</strong></h5>
+                                    <p class="text-muted mb-3">' . $product['description'] . '</p>
                                     <a class="btn btn-primary shadow" role="button" 
-                                        href="product_page.php?id='.$product['id'].'">
-                                        '.$product['price'].' zł 
+                                        href="product_page.php?id=' . $product['id'] . '">
+                                        ' . $product['price'] . ' zł 
                                     </a>
                                 </div>
                             </div>';
-                        }
-                    
-                        $connection->close();
-                    ?>
+                }
 
-                </div>
+                $connection->close();
+                ?>
 
             </div>
-        </section>
+
+        </div>
+    </section>
 
 
 

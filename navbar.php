@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.php"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box2-heart">
                     <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982Z" />
@@ -13,17 +12,17 @@
 
             <?php
 
-                if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] == 1) {
-                    echo '<a class="btn btn-outline-warning shadow me-2 btn-sm" role="button" href="admin_page.php">Admin 🦸‍♂️</a>';
-                }
-            
-                if (isset($_SESSION['logged_flag']) && $_SESSION['logged_flag'] == true) {
-                    echo '<a class="btn btn-danger shadow" role="button" href="logout_script.php">Wyloguj 🚩</a>';
+            if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] == 1) {
+                echo '<a class="btn btn-outline-warning shadow me-2 btn-sm" role="button" href="admin_page.php">Admin 🦸‍♂️</a>';
+            }
 
-                } else {
-                    echo '<a class="btn btn-primary shadow" role="button" href="login_page.php">Zaloguj się</a>';
-                }
-                
+            if (isset($_SESSION['logged_flag']) && $_SESSION['logged_flag'] == true) {
+                echo '<a class="btn btn-danger shadow" role="button" href="logout_script.php">Wyloguj 🚩</a>';
+                echo '<a class="btn btn-outline-primary shadow ms-2 btn-sm" role="button" href="cart_page.php">Koszyk 🛒</a>';
+            } else {
+                echo '<a class="btn btn-primary shadow" role="button" href="login_page.php">Zaloguj się</a>';
+            }
+
             ?>
         </div>
     </div>

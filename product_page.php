@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -20,16 +20,16 @@
     <?php include 'navbar.php'; ?>
 
     <?php
-        require_once "database_connect.php";
-                            
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM products WHERE id = $id";
-        $result = $connection->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $product[] = $row;
-            }
-            echo <<< EOT
+    require_once "database_connect.php";
+
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM products WHERE id = $id";
+    $result = $connection->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $product[] = $row;
+        }
+        echo <<< EOT
             <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
@@ -53,10 +53,10 @@
             </div>
         </section>
         EOT;
-        }
-        $connection->close();            
+    }
+    $connection->close();
     ?>
-                    
+
 
 
     <?php include 'footer.php'; ?>
