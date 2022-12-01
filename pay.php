@@ -30,10 +30,10 @@ if (isset($_SESSION['alert_msg'])) {
 
     <header class="bg-primary-gradient">
         <div class="container pt-4 pt-xl-5">
-            <div class="row pt-5">
+            <div class="row pt-3">
                 <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
                     <div class="text-center">
-                        <h1 class="fw-bold">Podaj dane do wysyłki</h1>
+                        <h1 class="fw-bold mb-5">Podaj dane do wysyłki</h1>
                     </div>
                 </div>
             </div>

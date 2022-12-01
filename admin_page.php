@@ -23,7 +23,7 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
 
     <div class="container text-center">
         <div class="row">
-            <div class="col col-md-8">
+            <div class="col col-md-5">
                 <h2>Products</h2>
                 <table class="table table-striped table-hover">
                     <thead>
@@ -63,14 +63,58 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
                                     <td>' . $product['description'] . '</td>
                                     <td>' . $product['img'] . '</td>
                                     <td>' . $product['price'] . '</td>
-                                    <td><a class="btn btn-outline-danger shadow btn-sm" role="button" href="product_page/' . $product['id'] . '.php">Edit</a>
+                                    <td><a class="btn btn-outline-danger shadow btn-sm" role="button" href="edit_product.php?id=' .$product['id'] . '">Edit</a>
+                                </tr>';
+                        }
+                        
+                        ?>
+                        <tr><a class="btn" href="add_product.php">Dodaj produkt</a></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col col-md-5">
+                <h2>Orders</h2>
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">id#</th>
+                            <th scope="col">User ID</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Products ID's</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        require_once "database_connect.php";
+
+                        function getOrders($connection)
+                        {
+                            $orders = array();
+                            $sql = "SELECT * FROM orders";
+                            $result = $connection->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $orders[] = $row;
+                                }
+                            }
+                            return $orders;
+                        }
+
+
+                        foreach (getOrders($connection) as $order) {
+                            echo
+                            '<tr>
+                                    <th scope="row">' . $order['id'] . '</th>
+                                    <td>' . $order['user_id'] . '</td>
+                                    <td>' . $order['total'] . '</td>
+                                    <td>' . $order['ordered_products'] . '</td>
                                 </tr>';
                         }
                         ?>
                     </tbody>
                 </table>
             </div>
-            <div class="col col-md-4">
+            <div class="col col-md-2">
                 <h2>Users</h2>
                 <table class="table table-striped table-hover table-sm">
                     <thead>

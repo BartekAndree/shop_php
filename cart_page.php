@@ -30,7 +30,7 @@ if (isset($_SESSION['alert_msg'])) {
 </head>
 
 <body>
-    <?php require 'navbar.php'; ?>
+    <?php require 'navbar.php';?>
 
     <section class="vh-auto" style="background-color: #fdccbc;">
         <div class="container h-100">
@@ -113,8 +113,7 @@ if (isset($_SESSION['alert_msg'])) {
                             </div>
                         </div>
                         <div class="d-flex justify-content-end">
-                        <input class="btn btn-primary btn-sm"  onclick="location.href='pay.php'"type="button" value="Zapłać">
-                        </input>
+                        <a class="btn btn-primary btn-sm" href="order_script.php" type="button">Zapłać</a>
                             <div>
                                         <a type="button" class="btn btn-danger btn-lg" href="unset_cart.php">
                                             <i class="fas fa-trash"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

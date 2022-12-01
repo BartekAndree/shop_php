@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Czas generowania: 09 Lis 2022, 23:59
--- Wersja serwera: 10.4.21-MariaDB
--- Wersja PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Czas generowania: 01 Gru 2022, 18:17
+-- Wersja serwera: 10.4.22-MariaDB
+-- Wersja PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,45 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `sklep`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+  `id` int(11) NOT NULL,
+  `email` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `email`) VALUES
+(4, 'andree.bartek@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `ordered_products` char(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `total`, `ordered_products`) VALUES
+(6, 1, 50, '2,'),
+(7, 1, 50, '2,');
 
 -- --------------------------------------------------------
 
@@ -72,6 +111,19 @@ INSERT INTO `users` (`id`, `email`, `password`, `isadmin`) VALUES
 --
 
 --
+-- Indeksy dla tabeli `newsletter`
+--
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indeksy dla tabeli `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `products`
 --
 ALTER TABLE `products`
@@ -88,10 +140,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT dla tabeli `newsletter`
+--
+ALTER TABLE `newsletter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT dla tabeli `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT dla tabeli `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
