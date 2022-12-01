@@ -42,11 +42,14 @@ session_start();
                         </div>
                         <p class="lead">{$product[0]['description']}</p>
                         <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" max="10" min="1" style="max-width: 5rem" />
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        
+                            <fieldset disabled>
+                                <input class="form-control text-center me-3 disabled" id="inputQuantity" type="number" value="1" max="10" min="1" style="max-width: 5rem" />
+                            </fieldset>
+                            <a href="add_to_cart.php?id={$product[0]['id']}" class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-cart-fill me-1"></i>
                                 Dodaj do koszyka
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
