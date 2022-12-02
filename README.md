@@ -3,6 +3,11 @@
 
 A simple shop made with php and bootstrap
 
+Available for WSB students here:
+
+`https://gargamel.wsb.poznan.pl/~pzx101615/php/index.php`
+
+
 
 
 
