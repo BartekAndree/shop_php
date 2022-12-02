@@ -1,13 +1,26 @@
-# shop_php
 
-https://gargamel.wsb.poznan.pl/~pzx101615/php/index.php - link do stronki
+# Shop_php
 
-login admina andree@g.com
+A simple shop made with php and bootstrap
 
-hasło 123456
 
-Tworzenie bazy danych:
 
-1. Stworzyć bazę danych "sklep"
 
-2. Zaimportować do niej plik o nazwie: "sklep.sql"
+
+## Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/BartekAndree/shop_php/main/assets/img/php_shop-mockup.png)
+
+
+## Installation
+```bash
+  1. Create MySQL database named 'sklep'
+  2. Import db from sklep.sql
+```
+    
+## Admin user
+
+email: `andree@g.com`
+
+password: `123456`
+
