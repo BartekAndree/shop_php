@@ -52,15 +52,15 @@ if (isset($_SESSION['alert_msg'])) {
                         <div class="card bg-primary-light">
                             <div class="card-body text-center px-4 py-5 px-md-5">
                                 <p class="fw-bold text-primary card-text mb-2">Najlepsze kaktusy</p>
-                                <h5 class="fw-bold card-title mb-3">Nasze kaktusy zostały uznane za jedne z najlepszych do dekoracji wnętrz</h5><input class="btn btn-primary btn-sm"  onclick="location.href='products_page.php'"type="button" value="Zobacz"></input>
-                            </div> 
+                                <h5 class="fw-bold card-title mb-3">Nasze kaktusy zostały uznane za jedne z najlepszych do dekoracji wnętrz</h5><input class="btn btn-primary btn-sm" onclick="location.href='products_page.php'" type="button" value="Zobacz"></input>
+                            </div>
                         </div>
                     </div>
                     <div class="col mb-4">
                         <div class="card bg-secondary-light">
                             <div class="card-body text-center px-4 py-5 px-md-5">
                                 <p class="fw-bold text-secondary card-text mb-2">Super wiśnie</p>
-                                <h5 class="fw-bold card-title mb-3">Najlepsze z najlepszych wiśni w Polsce, niezapomniany smak</h5><input class="btn btn-primary btn-sm"  onclick="location.href='products_page.php'"type="button" value="Zobacz"></input>
+                                <h5 class="fw-bold card-title mb-3">Najlepsze z najlepszych wiśni w Polsce, niezapomniany smak</h5><input class="btn btn-primary btn-sm" onclick="location.href='products_page.php'" type="button" value="Zobacz"></input>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ if (isset($_SESSION['alert_msg'])) {
                         <div class="card bg-info-light">
                             <div class="card-body text-center px-4 py-5 px-md-5">
                                 <p class="fw-bold text-info card-text mb-2">Najlepsze ananasy</p>
-                                <h5 class="fw-bold card-title mb-3">Niepowtarzalny smak ananasa w twoim domu</h5><input class="btn btn-primary btn-sm"  onclick="location.href='products_page.php'"type="button" value="Zobacz"></input>
+                                <h5 class="fw-bold card-title mb-3">Niepowtarzalny smak ananasa w twoim domu</h5><input class="btn btn-primary btn-sm" onclick="location.href='products_page.php'" type="button" value="Zobacz"></input>
                             </div>
                         </div>
                     </div>

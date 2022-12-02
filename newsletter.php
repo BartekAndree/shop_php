@@ -16,12 +16,11 @@
 require_once 'database_connect.php';
 
 if (isset($_POST['confirmemail'])) {
-    try{
-	    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    try {
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
         $sql = "INSERT INTO newsletter (email) VALUES ('$email')";
         $connection->query($sql);
-        header('Location: index.php');
     } catch (Exception $e) {
         echo $e->getMessage();
     }

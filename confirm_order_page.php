@@ -30,15 +30,15 @@ if (!isset($_SESSION['logged_flag'])) {
                         <h1 class="fw-bold text-success mb-4">Twoje zamówienie zostało złożone</h1>
                         <iframe class="rounded" width="560" height="360" src="https://www.youtube.com/embed/SC4xMk98Pdc?start=36" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    
-                </div> 
+
+                </div>
             </div>
         </div>
         <?php include 'newsletter.php'; ?>
     </header>
 
-    <?php 
-    include 'footer.php'; 
+    <?php
+    include 'footer.php';
     ?>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

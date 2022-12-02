@@ -63,10 +63,10 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
                                     <td>' . $product['description'] . '</td>
                                     <td>' . $product['img'] . '</td>
                                     <td>' . $product['price'] . '</td>
-                                    <td><a class="btn btn-outline-danger shadow btn-sm" role="button" href="edit_product.php?id=' .$product['id'] . '">Edit</a>
+                                    <td><a class="btn btn-outline-danger shadow btn-sm" role="button" href="edit_product.php?id=' . $product['id'] . '">Edit</a>
                                 </tr>';
                         }
-                        
+
                         ?>
                         <tr><a class="btn" href="add_product.php">Dodaj produkt</a></tr>
                     </tbody>

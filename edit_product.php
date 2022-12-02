@@ -4,6 +4,7 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
     header('Location: login_page.php');
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +20,9 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
 </head>
 
 <body>
-    <?php 
-    require_once 'navbar.php'; 
-    
+    <?php
+    require_once 'navbar.php';
+
     require_once "database_connect.php";
 
     $id = $_GET['id'];
@@ -31,23 +32,22 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
         while ($row = $result->fetch_assoc()) {
             $product[] = $row;
         }
-        echo <<< EOT
-        <section>
-        <div class="container py-5">
-            <div class="mx-auto" style="max-width: 900px;">
-            <div class="col-md-3 mb-4 mx-auto d-flex"><img class="rounded card-img-top mb-5 mb-md-0 " src="assets/img/products/{$product[0]['img']}" alt="{$product[0]['name']}" /></div>
-                <form method="post">
-                    <div class="mb-3"><input class="form-control" type="text" name="name" value="{$product[0]['name']}"></div>
-                    <div class="mb-3"><input class="form-control" type="number" name="price" value="{$product[0]['price']}"></div>
-                    <textarea class="form-control" aria-label="With textarea" name="description">{$product[0]['description']}</textarea>
+        echo
+        '<section>
+            <div class="container py-5">
+                <div class="mx-auto" style="max-width: 900px;">
+                <div class="col-md-3 mb-4 mx-auto d-flex"><img class="rounded card-img-top mb-5 mb-md-0 " src="assets/img/products/' . $product[0]['img'] . '" alt="' . $product[0]['name'] . '" /></div>
+                    <form method="POST">
+                        <div class="mb-3"><input class="form-control" type="text" name="name" value="' . $product[0]['name'] . '"></div>
+                        <div class="mb-3"><input class="form-control" type="number" name="price" value="' . $product[0]['price'] . '"></div>
+                        <textarea class="form-control" aria-label="With textarea" name="description">' . $product[0]['description'] . '</textarea>
 
-                    <div class="m-3"><button class="btn btn-danger shadow d-block w-10 mx-auto d-flex" type="submit" name="delete">Usuń</button></div>
-                    <div class="m-3"><button class="btn btn-outline-danger shadow d-block w-100" type="submit" name="confirm">Zatwierdź</button></div>
-                </form>
+                        <div class="m-3"><button class="btn btn-danger shadow d-block w-10 mx-auto d-flex" type="submit" name="delete">Usuń</button></div>
+                        <div class="m-3"><button class="btn btn-outline-danger shadow d-block w-100" type="submit" name="confirm">Zatwierdź</button></div>
+                    </form>
+                </div>
             </div>
-        </div>
-        </section>
-    EOT;
+        </section>';
     }
     if (isset($_POST['delete'])) {
         $sql = "DELETE FROM products WHERE id = $id";
@@ -67,7 +67,7 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
     $connection->close();
     ?>
 
-    
+
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

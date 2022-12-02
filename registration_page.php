@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -15,14 +15,14 @@
 </head>
 
 <body>
-    <?php 
-        if (isset($_SESSION['alert_msg'])){
-            echo 
-            '<div class="alert alert-'.$_SESSION['alert_type'].'" role="alert">'.$_SESSION['alert_msg'].'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
-        }
-    
+    <?php
+    if (isset($_SESSION['alert_msg'])) {
+        echo
+        '<div class="alert alert-' . $_SESSION['alert_type'] . '" role="alert">' . $_SESSION['alert_msg'] . '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    }
+
     ?>
-    
+
     <?php include 'navbar.php'; ?>
 
 

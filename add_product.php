@@ -19,13 +19,13 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
 </head>
 
 <body>
-    <?php 
-    require_once 'navbar.php'; 
+    <?php
+    require_once 'navbar.php';
     ?>
-        <section>
+    <section>
         <div class="container py-5">
             <div class="mx-auto" style="max-width: 900px;">
-            <div class="col-md-3 mb-4 mx-auto d-flex"><img class="rounded card-img-top mb-5 mb-md-0 " src="assets/img/products/default.png" alt="default image" /></div>
+                <div class="col-md-3 mb-4 mx-auto d-flex"><img class="rounded card-img-top mb-5 mb-md-0 " src="assets/img/products/default.png" alt="default image" /></div>
                 <form method="post">
                     <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Nazwa"></div>
                     <div class="mb-3"><input class="form-control" type="number" name="price" placeholder="Cena"></div>
@@ -35,7 +35,7 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
                 </form>
             </div>
         </div>
-        </section>
+    </section>
     }
     <?php
     require_once "database_connect.php";
@@ -53,7 +53,7 @@ if ((!isset($_SESSION['isadmin'])) || ($_SESSION['isadmin'] != 1)) {
     $connection->close();
     ?>
 
-    
+
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
